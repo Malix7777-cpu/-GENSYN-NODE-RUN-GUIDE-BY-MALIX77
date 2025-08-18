@@ -1,6 +1,6 @@
 <div align="center">
 
-# 👻☠️GENSYN-NODE-RUN-GUIDE-BY-MALIX77
+# 👻☠️GENSYN-NODE-RUN-GUIDE-BY-MALIX777
 
 </div>
 
