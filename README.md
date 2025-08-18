@@ -207,3 +207,20 @@ source .venv/bin/activate
 ---
 
 
+
+
+### **Note**
+
+- If you see `0x0000000000000000000000000000000000000000` in the Connected EOA Address section, your contribution is not being recorded.  
+  **Delete the existing `swarm.pem` file and start again with a new email.**
+
+---
+
+## 🤖 Need Help
+
+ 📺 **Guides & Updates:** [@LEGENDARYLOOTERSSS](https://t.me/LEGENDARYLOOTERSSS)
+
+ If U have any issue then open a issue on this repo or Dm me on Telegram~
+
+Thank You! Happy Coding!📈
+```
