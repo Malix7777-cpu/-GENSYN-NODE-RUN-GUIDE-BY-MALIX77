@@ -207,6 +207,36 @@ source .venv/bin/activate
 ---
 
 
+## 📈 Update To new release of **Gensyn** Node
+
+* Go to gensyn screen (Vps)
+
+```
+screen -r gensyn
+```
+
+* Stop Node run by pressing `CTRL + C` button on gensyn screen
+
+* Move to rl-swarm directory
+
+```
+cd rl-swarm
+```
+
+* Pull the latest release from Gensyn Repository
+
+```
+git switch main
+git reset --hard
+git clean -fd
+git pull origin main
+```
+
+* Start the swarm Node 🚀
+
+```
+./run_rl_swarm.sh
+```
 
 
 ### **Note**
