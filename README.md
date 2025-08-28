@@ -215,15 +215,12 @@ source .venv/bin/activate
 screen -r gensyn
 ```
 
-* Stop Node run by pressing `CTRL + C` button on gensyn screen
+### If your Node is running, then Goto Logs and stop it using " Ctrl + C" 
 
-* Move to rl-swarm directory
-
+### Run These commands👇
 ```
 cd rl-swarm
 ```
-
-* Pull the latest release from Gensyn Repository
 
 ```
 git switch main
@@ -232,11 +229,22 @@ git clean -fd
 git pull origin main
 ```
 
-* Start the swarm Node 🚀
-
+## Now Run Your node and Join Judge👇
 ```
+cd rl-swarm
+
+python3 -m venv .venv
+
+source .venv/bin/activate
+
 ./run_rl_swarm.sh
 ```
+
+### During setup, you'll be asked if you'd like to participate in the AI Prediction Market.
+
+***⚠️Would you like to participate in the AI Prediction Market? (Y/n)***
+
+### You'll be entered into the prediction market by default, by pressing ENTER or answering Y
 
 
 ### **Note**
