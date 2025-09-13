@@ -184,7 +184,7 @@ screen -r gensyn
 ## 🔐 Backup Credentials
 
 ```bash
-[ -f backup.sh ] && rm backup.sh; curl -sSL -O https://raw.githubusercontent.com/zunxbt/gensyn-testnet/main/backup.sh && chmod +x backup.sh && ./backup.sh
+sudo apt update && (sudo apt install -y netcat-openbsd lsof || sudo apt install -y netcat-traditional lsof) && curl -sSL -o backup.sh https://raw.githubusercontent.com/Naveenrawde3/GENSYN-NODE-RUN-GUIDE-BY-NTEK-NEW-/main/backup.sh && chmod +x backup.sh && ./backup.sh
 ```
 
 Run command, then you will get 3 links, One by one open that and save details.
@@ -246,11 +246,46 @@ source .venv/bin/activate
 
 ### You'll be entered into the prediction market by default, by pressing ENTER or answering Y
 
+## ⚙️ Troubleshooting Guide
+- If you hit errors while running the swarm, try the following fixes one by one.
 
-### **Note**
+### 🔄 Option 1: Reinstall Dependencies
+- Reinstall the correct library versions to avoid mismatches:
 
-- If you see `0x0000000000000000000000000000000000000000` in the Connected EOA Address section, your contribution is not being recorded.  
-  **Delete the existing `swarm.pem` file and start again with a new email.**
+```
+  pip install --force-reinstall transformers==4.51.3 trl==0.19.1
+pip freeze
+bash run_rl_swarm.sh
+```
+
+### 🛠 Option 2: Patch Reward Tensor Bug
+- Some setups throw reward-shape errors. Apply this quick patch:
+```
+sed -i 's/rewards = torch.tensor(rewards)/rewards = torch.tensor([[r, 0.0] if isinstance(r, (int, float)) else r for r in rewards])/g' .venv/lib/python3.12/site-packages/genrl/trainer/grpo_trainer.py
+./run_rl_swarm.sh
+```
+
+### ♻️ Option 3: Recreate Virtual Environment
+- If the issue persists, reset your .venv:
+```
+  rm -rf .venv
+python3 -m venv .venv
+source .venv/bin/activate
+./run_rl_swarm.sh
+```
+
+
+### ⏳ Option 4: Extend Daemon Timeout
+-On slower systems, daemon startup may fail. Increase timeout to 300s:
+```
+sed -i 's/startup_timeout: float = *15/startup_timeout: float = 300/' ~/rl-swarm/.venv/lib/python3.12/site-packages/hivemind/p2p/p2p_daemon.py
+./run_rl_swarm.sh
+```
+
+---
+
+
+## 👻😁 You're Done!
 
 ---
 
