@@ -348,7 +348,7 @@ sed -i 's/startup_timeout: float = *15/startup_timeout: float = 300/' ~/rl-swarm
 
  📺 **Guides & Updates:** [@LEGENDARYLOOTERSSS](https://t.me/LEGENDARYLOOTERSSS)
 
-🔮  **Follow me on X for more updates:** https://x.com/MSGGAMER1091?t=IAWSz0xL_zCUjgjOzpLOOA&s=09
+🔮  **Follow me on X for more updates:** https://x.com/MSGGAMER1091
 
  If U have any issue then open a issue on this repo or Dm me on Telegram~
 
