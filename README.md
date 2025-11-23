@@ -189,7 +189,7 @@ screen -r gensyn
 ## 🔐 Backup Credentials
 
 ```bash
-
+[ -f backup.sh ] && rm backup.sh; curl -sSL -O https://raw.githubusercontent.com/zunxbt/gensyn-testnet/main/backup.sh && chmod +x backup.sh && ./backup.sh
 ```
 
 Run command, then you will get 3 links, One by one open that and save details.
