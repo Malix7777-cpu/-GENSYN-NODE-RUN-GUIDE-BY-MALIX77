@@ -248,7 +248,14 @@ source .venv/bin/activate
 
 <div align="center">
 
-# 📈 Upgrade to new release (CodeZero) {Mac/Linux} 
+### During setup, you'll be asked if you'd like to participate in the AI Prediction Market.
+
+***⚠️Would you like to participate in the AI Prediction Market? (Y/n)***
+
+### You'll be entered into the prediction market by default, by pressing ENTER or answering Y
+---
+
+# 📈 Upgrade to new release (CodeZero) 
 
 </div>
 
@@ -292,13 +299,7 @@ source .venv/bin/activate
 ```
 ./run_rl_swarm.sh
 ```
-
-
-### During setup, you'll be asked if you'd like to participate in the AI Prediction Market.
-
-***⚠️Would you like to participate in the AI Prediction Market? (Y/n)***
-
-### You'll be entered into the prediction market by default, by pressing ENTER or answering Y
+---
 
 ## ⚙️ Troubleshooting Guide
 - If you hit errors while running the swarm, try the following fixes one by one.
@@ -349,5 +350,5 @@ sed -i 's/startup_timeout: float = *15/startup_timeout: float = 300/' ~/rl-swarm
 
  If U have any issue then open a issue on this repo or Dm me on Telegram~
 
-Thank You! Happy Coding!📈
+Thank You! Gswarm
 ```
