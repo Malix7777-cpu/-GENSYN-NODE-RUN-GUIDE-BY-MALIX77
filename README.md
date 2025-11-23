@@ -41,13 +41,12 @@ python3 --version
 
 ---
 
-## 🟩 Install Node.js
+## 🟩 Install Node.js , npm & yarn
 
 ### For **Linux/WSL**:
 
 ```bash
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-sudo apt update && sudo apt install -y nodejs
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - && sudo apt update && sudo apt install -y nodejs
 ```
 
 ### For **Mac**:
@@ -90,14 +89,12 @@ yarn -v
 ```bash
 yes | sudo apt install ufw -y && sudo ufw allow 22 && sudo ufw allow 3000/tcp && yes | sudo ufw enable && wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && sudo dpkg -i cloudflared-linux-amd64.deb
 ```
----
 
-## 🧬 Clone RL-Swarm Repository
+* Check version
 
-```bash
-git clone https://github.com/gensyn-ai/rl-swarm.git
 ```
-
+cloudflared --version
+```
 ---
 
 ## 🖥️ (Optional) Create a Screen Session (for VPS)
@@ -108,27 +105,35 @@ screen -S gensyn
 
 ---
 
-## 📂 Navigate to RL-Swarm Directory
+## 🎲 Clone RL-SWARM Repo
 
-```bash
-cd rl-swarm
+```
+git clone https://github.com/gensyn-ai/rl-swarm.git
 ```
 
+
+ ## 📂 Navigate to rl-swarm
+
+```
+cd rl-swarm
+```
 ---
 
-## 🏗️ Create & Activate Python Virtual Environment
 
-```bash
+ ## 🏗️ Create & Activate a Virtual Environment
+
+```
 python3 -m venv .venv
 source .venv/bin/activate
 ```
----
 
-## 🚦 Run the Swarm Node
 
-```bash
+#### 5️⃣ Run the swarm Node 
+
+```
 ./run_rl_swarm.sh
 ```
+
 
 Follow the prompts:
 
@@ -184,7 +189,7 @@ screen -r gensyn
 ## 🔐 Backup Credentials
 
 ```bash
-sudo apt update && (sudo apt install -y netcat-openbsd lsof || sudo apt install -y netcat-traditional lsof) && curl -sSL -o backup.sh https://raw.githubusercontent.com/Naveenrawde3/GENSYN-NODE-RUN-GUIDE-BY-NTEK-NEW-/main/backup.sh && chmod +x backup.sh && ./backup.sh
+
 ```
 
 Run command, then you will get 3 links, One by one open that and save details.
@@ -239,6 +244,55 @@ source .venv/bin/activate
 
 ./run_rl_swarm.sh
 ```
+---
+
+<div align="center">
+
+# 📈 Upgrade to new release (CodeZero) {Mac/Linux} 
+
+</div>
+
+* Go to gensyn screen (Vps)
+
+```
+screen -r gensyn
+```
+
+* Stop your node by `ctrl+c` if u are on gensyn screen (Vps)
+
+* Move to rl-swarm directory
+```
+cd rl-swarm
+```
+
+* Deactivate Environment
+
+```
+deactivate 
+rm -rf .venv
+```
+
+* Pull the latest release 
+
+```
+git switch main
+git reset --hard
+git clean -fd
+git pull origin main
+```
+
+
+* Start the swarm Node 🚀
+
+```
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+```
+./run_rl_swarm.sh
+```
+
 
 ### During setup, you'll be asked if you'd like to participate in the AI Prediction Market.
 
